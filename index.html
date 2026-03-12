@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechLaunch News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div></div>
+    <div class="logo">
+        <img src="res/лого.png"></div>
+    <div class="header-right">
+        <span id="userGreeting"></span>
+        <button class="btn-login" id="btnLogin" onclick="openLogin()">Войти</button>
+        <button class="btn-logout" id="btnLogout" onclick="logout()">Выйти</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="sidebar-label">Разделы</div>
+        <nav>
+            <button onclick="showSection('ai')" id="nav-ai" class="active">
+                <span class="sidebar-icon">🤖</span> Искусственный ИИ
+            </button>
+            <button onclick="showSection('phones')" id="nav-phones">
+                <span class="sidebar-icon">📱</span> Телефоны
+            </button>
+            <button onclick="showSection('gadgets')" id="nav-gadgets">
+                <span class="sidebar-icon">🎮</span> Гаджеты
+            </button>
+            <button onclick="showSection('add')" id="nav-add">
+                <span class="sidebar-icon">✏️</span> Добавить новость
+            </button>
+        </nav>
+
+        <div class="trending-block">
+            <h4>🔥 Тренды</h4>
+            <div class="trending-item">
+                <span class="trending-num">01</span>
+                <span>GPT-6 побил все рекорды</span>
+            </div>
+            <div class="trending-item">
+                <span class="trending-num">02</span>
+                <span>Apple Vision Pro 2 анонсирован</span>
+            </div>
+            <div class="trending-item">
+                <span class="trending-num">03</span>
+                <span>Starlink охватил 100 стран</span>
+            </div>
+            <div class="trending-item">
+                <span class="trending-num">04</span>
+                <span>Neuralink: первые результаты</span>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+
+        <!-- ИИ -->
+        <section id="ai" class="content active">
+            <div class="article-meta">
+                <span class="tag">Главное</span>
+                <span class="article-date">2 марта 2026</span>
+            </div>
+            <h2>Искусственный интеллект меняет всё</h2>
+            <p class="lead">В 2026 году ИИ перестал быть инструментом — он стал полноправным участником научных открытий, художественного творчества и повседневной жизни.</p>
+            <img src="res/AI.jpg" alt="Искусственный интеллект">
+
+            <p>Современные языковые модели достигли уровня, при котором они способны не просто отвечать на вопросы, но и генерировать научные гипотезы, анализировать медицинские снимки с точностью выше среднего врача и писать код, который люди принимают за написанный опытным разработчиком.</p>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="num">+340%</div>
+                    <div class="desc">Рост инвестиций в ИИ за 2 года</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num">1.8 млрд</div>
+                    <div class="desc">Пользователей AI-сервисов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num">72%</div>
+                    <div class="desc">Компаний внедрили ИИ-решения</div>
+                </div>
+            </div>
+
+            <p>Компании по всему миру массово внедряют ИИ-помощников в рабочие процессы. Банки используют нейросети для обнаружения мошенничества в реальном времени, логистические компании оптимизируют маршруты за секунды, а HR-отделы автоматизируют первичный отбор кандидатов.</p>
+
+            <p>Вместе с тем растут и этические вопросы: как регулировать ИИ-контент? Кто несёт ответственность за ошибки алгоритма? В ЕС уже вступил в силу «AI Act» — первый в мире закон, классифицирующий искусственный интеллект по уровню риска и требующий прозрачности от разработчиков.</p>
+        </section>
+
+        <!-- Телефоны -->
+        <section id="phones" class="content">
+            <div class="article-meta">
+                <span class="tag purple">Гаджеты</span>
+                <span class="article-date">28 февраля 2026</span>
+            </div>
+            <h2>Смартфоны 2026: новая эра</h2>
+            <p class="lead">Гибкие дисплеи, спутниковая связь и встроенный ИИ-процессор — флагманы этого года переосмысляют, каким должен быть телефон.</p>
+            <img src="res/Смартфон.jpg" alt="Смартфоны 2026">
+
+            <p>Samsung Galaxy Z Fold 7 и Huawei Mate X5 задали новый стандарт: экраны, способные складываться втрое, батареи на 7000 мАч с беспроводной зарядкой 120 Вт и камеры с оптическим зумом до 200x. Но главная революция — в программном обеспечении.</p>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="num">200x</div>
+                    <div class="desc">Оптический зум новых камер</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num">3 нм</div>
+                    <div class="desc">Техпроцесс флагманских чипов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num">7 дней</div>
+                    <div class="desc">Автономность при экономном режиме</div>
+                </div>
+            </div>
+
+            <p>Встроенные нейронные процессоры теперь позволяют запускать языковые модели прямо на устройстве без интернета. Переводчик в реальном времени, генерация текста, распознавание лиц — всё работает локально, без передачи данных на сервер.</p>
+
+            <p>Apple ответила на это анонсом iPhone 18 Pro с революционным чипом M4 Mobile. Впервые в истории смартфон Apple получил 16 ГБ оперативной памяти и поддержку профессионального видеомонтажа в формате 8K прямо на устройстве.</p>
+        </section>
+
+        <!-- Гаджеты -->
+        <section id="gadgets" class="content">
+            <div class="article-meta">
+                <span class="tag green">Технологии</span>
+                <span class="article-date">25 февраля 2026</span>
+            </div>
+            <h2>Гаджеты, которые изменят вашу жизнь</h2>
+            <p class="lead">Умные кольца, нейроинтерфейсы и AR-очки — устройства, которые ещё недавно казались фантастикой, теперь можно купить в магазине.</p>
+            <img src="res/ring.jpg">
+            <p>Samsung Galaxy Ring 2 собирает данные о здоровье круглосуточно: пульс, температура тела, уровень кислорода, качество сна и даже стресс по вариабельности сердечного ритма. Всё это анализирует ИИ и даёт персональные рекомендации прямо в приложении.</p>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="num">30+</div>
+                    <div class="desc">Биометрических показателей</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num">$3 490</div>
+                    <div class="desc">Цена Apple Vision Pro 2</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num">120 г</div>
+                    <div class="desc">Вес новых AR-очков Meta</div>
+                </div>
+            </div>
+
+            <p>Meta представила Ray-Ban Smart Glasses 3-го поколения — очки весом всего 120 граммов с AR-дисплеем, встроенным ИИ-ассистентом и 12-часовой батареей. Теперь можно получать уведомления, делать фото и видеть подсказки навигации, не доставая телефон.</p>
+
+            <p>Отдельного внимания заслуживают устройства для здоровья. Умные пластыри от Withings отслеживают уровень глюкозы в крови без уколов, а наушники Sony WH-1000XM7 теперь умеют адаптировать звук под акустику помещения в реальном времени.</p>
+        </section>
+
+        <!-- Добавить новость -->
+        <section id="add" class="content">
+            <div class="article-meta">
+                <span class="tag">Редакция</span>
+            </div>
+            <h2>Добавить новость</h2>
+            <p class="lead" style="margin-bottom: 28px;">Поделитесь интересной технологической новостью с сообществом. Войдите в аккаунт, чтобы опубликовать материал.</p>
+
+            <div class="form-group">
+                <label>Заголовок</label>
+                <input type="text" id="title" placeholder="Например: Apple анонсировала новый MacBook...">
+            </div>
+            <div class="form-group">
+                <label>Текст новости</label>
+                <textarea id="text" placeholder="Подробное описание новости..."></textarea>
+            </div>
+
+            <button class="btn-publish" onclick="addPost()">Опубликовать</button>
+            <span class="locked-hint" id="lockedHint">🔒 Требуется вход</span>
+
+            <div id="userPosts"></div>
+        </section>
+
+    </main>
+</div>
+
+<!-- Модальное окно входа -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeLogin()">✕</button>
+        <h2>Вход в аккаунт</h2>
+        <p class="modal-sub">Введите любое имя и пароль для демонстрации</p>
+
+        <div class="form-group">
+            <label>Имя пользователя</label>
+            <input type="text" id="username" placeholder="Ваше имя">
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" id="password" placeholder="••••••••" onkeydown="if(event.key==='Enter') login()">
+        </div>
+
+        <button class="btn-modal-login" onclick="login()">Войти</button>
+        <p id="loginMessage"></p>
+        <p class="demo-hint">Демо: введите любые данные (мин. 3 символа)</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
