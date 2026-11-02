@@ -1,37 +1,28 @@
  :root {
-            --bg: #080c14;
-            --surface: #0e1420;
-            --surface2: #141b2d;
-            --border: #1e2a40;
-            --accent: #00d4ff;
+            --bg: #101216;  /* ← изменено */
+            --surface: #171a20;  /* ← изменено */
+            --surface2: #1d212a;  /* ← изменено */
+            --border: #2a2f3a;  /* ← изменено */
+            --accent: #5aa7f5;  /* ← изменено */
             --accent2: #7c3aed;
-            --text: #e8edf5;
-            --muted: #5a6a85;
-            --danger: #ff4466;
-            --success: #00e5a0;
+            --text: #eceef2;  /* ← изменено */
+            --text-soft: #c3c9d4;  /* ← изменено */
+            --muted: #8790a0;  /* ← изменено */
+            --danger: #ff5c70;  /* ← изменено */
+            --success: #4cc790;  /* ← изменено */
+            --font-head: 'Source Serif 4', Georgia, 'Times New Roman', serif;  /* ← изменено */
+            --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;  /* ← изменено */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--font-body);  /* ← изменено */
             background: var(--bg);
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
-        }
-
-        /* Animated grid background */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
+            -webkit-font-smoothing: antialiased;  /* ← изменено */
         }
 
         /* ─── HEADER ─── */
@@ -41,7 +32,7 @@
             align-items: center;
             padding: 0 32px;
             height: 72px;
-            background: rgba(8,12,20,0.95);
+            background: rgba(16,18,22,0.92);  /* ← изменено */
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -62,7 +53,6 @@
             width: auto;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(0,212,255,0.3));
         }
 
         .header-right {
@@ -73,29 +63,28 @@
         }
 
         #userGreeting {
-            font-size: 13px;
-            color: var(--accent);
+            font-size: 14px;  /* ← изменено */
+            color: var(--text-soft);  /* ← изменено */
             font-weight: 500;
             display: none;
         }
 
         .btn-login {
-            padding: 8px 20px;
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            font-family: 'Syne', sans-serif;
-            font-size: 13px;
+            padding: 9px 20px;  /* ← изменено */
+            background: var(--text);  /* ← изменено */
+            border: 1px solid var(--text);  /* ← изменено */
+            color: var(--bg);  /* ← изменено */
+            font-family: var(--font-body);  /* ← изменено */
+            font-size: 14px;  /* ← изменено */
             font-weight: 600;
-            letter-spacing: 0.5px;
             cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.2s;
+            border-radius: 6px;  /* ← изменено */
+            transition: background 0.2s, border-color 0.2s;  /* ← изменено */
         }
 
         .btn-login:hover {
             background: var(--accent);
-            color: var(--bg);
+            border-color: var(--accent);  /* ← изменено */
         }
 
         .btn-logout {
@@ -103,10 +92,10 @@
             background: transparent;
             border: 1px solid var(--border);
             color: var(--muted);
-            font-family: 'DM Sans', sans-serif;
-            font-size: 12px;
+            font-family: var(--font-body);  /* ← изменено */
+            font-size: 13px;  /* ← изменено */
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 6px;  /* ← изменено */
             transition: all 0.2s;
             display: none;
         }
@@ -118,33 +107,36 @@
             display: flex;
             position: relative;
             z-index: 1;
-            min-height: calc(100vh - 64px);
+            min-height: calc(100vh - 72px);  /* ← изменено */
         }
 
         /* ─── SIDEBAR ─── */
         aside.sidebar {
-            width: 220px;
+            width: 240px;  /* ← изменено */
             background: var(--surface);
             border-right: 1px solid var(--border);
             padding: 28px 16px;
             flex-shrink: 0;
+            position: sticky;  /* ← изменено */
+            top: 72px;  /* ← изменено */
+            align-self: flex-start;  /* ← изменено */
+            height: calc(100vh - 72px);  /* ← изменено */
+            overflow-y: auto;  /* ← изменено */
         }
 
         .sidebar-label {
-            font-family: 'Syne', sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 3px;
+            font-family: var(--font-body);  /* ← изменено */
+            font-size: 12px;  /* ← изменено */
+            font-weight: 600;  /* ← изменено */
             color: var(--muted);
-            text-transform: uppercase;
             padding: 0 12px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;  /* ← изменено */
         }
 
         .sidebar nav {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 2px;  /* ← изменено */
             margin-bottom: 32px;
         }
 
@@ -153,9 +145,10 @@
             padding: 10px 12px;
             background: transparent;
             border: none;
-            color: var(--muted);
-            font-family: 'DM Sans', sans-serif;
-            font-size: 14px;
+            border-left: 2px solid transparent;  /* ← изменено */
+            color: var(--text-soft);  /* ← изменено */
+            font-family: var(--font-body);  /* ← изменено */
+            font-size: 15px;  /* ← изменено */
             cursor: pointer;
             border-radius: 6px;
             text-align: left;
@@ -171,57 +164,55 @@
         }
 
         .sidebar button.active {
-            background: rgba(0,212,255,0.1);
-            color: var(--accent);
+            background: var(--surface2);  /* ← изменено */
+            color: var(--text);  /* ← изменено */
+            font-weight: 600;  /* ← изменено */
             border-left: 2px solid var(--accent);
+            border-radius: 0 6px 6px 0;  /* ← изменено */
         }
 
         .sidebar-icon { font-size: 16px; }
 
         /* Trending block in sidebar */
         .trending-block {
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 14px;
+            border-top: 1px solid var(--border);  /* ← изменено */
+            padding: 20px 12px 0;  /* ← изменено */
         }
 
         .trending-block h4 {
-            font-family: 'Syne', sans-serif;
-            font-size: 11px;
+            font-family: var(--font-head);  /* ← изменено */
+            font-size: 16px;  /* ← изменено */
             font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--muted);
-            text-transform: uppercase;
-            margin-bottom: 10px;
+            color: var(--text);  /* ← изменено */
+            margin-bottom: 14px;  /* ← изменено */
         }
 
         .trending-item {
             display: flex;
-            gap: 8px;
+            gap: 10px;  /* ← изменено */
             align-items: flex-start;
-            margin-bottom: 8px;
+            margin-bottom: 12px;  /* ← изменено */
         }
 
         .trending-num {
-            font-family: 'Syne', sans-serif;
-            font-size: 11px;
-            font-weight: 800;
-            color: var(--accent);
-            min-width: 16px;
+            font-family: var(--font-head);  /* ← изменено */
+            font-size: 15px;  /* ← изменено */
+            font-weight: 700;  /* ← изменено */
+            color: var(--muted);  /* ← изменено */
+            min-width: 22px;  /* ← изменено */
         }
 
         .trending-item span {
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.4;
+            font-size: 13px;  /* ← изменено */
+            color: var(--text-soft);  /* ← изменено */
+            line-height: 1.45;  /* ← изменено */
         }
 
         /* ─── MAIN ─── */
         main {
             flex: 1;
-            padding: 32px;
-            max-width: 860px;
+            padding: 44px 40px 64px;  /* ← изменено */
+            max-width: 800px;  /* ← изменено */
         }
 
         .content { display: none; animation: fadeIn 0.3s ease; }
@@ -237,89 +228,88 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;  /* ← изменено */
         }
 
         .tag {
-            font-family: 'Syne', sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: 3px;
-            background: rgba(0,212,255,0.1);
+            font-family: var(--font-body);  /* ← изменено */
+            font-size: 12px;  /* ← изменено */
+            font-weight: 600;  /* ← изменено */
+            padding: 3px 10px;  /* ← изменено */
+            border-radius: 20px;  /* ← изменено */
+            background: rgba(90,167,245,0.12);  /* ← изменено */
             color: var(--accent);
-            border: 1px solid rgba(0,212,255,0.2);
         }
 
-        .tag.purple { background: rgba(124,58,237,0.15); color: #a78bfa; border-color: rgba(124,58,237,0.3); }
-        .tag.green { background: rgba(0,229,160,0.1); color: var(--success); border-color: rgba(0,229,160,0.2); }
+        .tag.purple { background: rgba(167,139,250,0.14); color: #b4a0fa; }  /* ← изменено */
+        .tag.green { background: rgba(76,199,144,0.12); color: var(--success); }  /* ← изменено */
 
-        .article-date { font-size: 12px; color: var(--muted); }
+        .article-date { font-size: 13px; color: var(--muted); }  /* ← изменено */
 
         .content h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 32px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            line-height: 1.2;
-            margin-bottom: 16px;
+            font-family: var(--font-head);  /* ← изменено */
+            font-size: 40px;  /* ← изменено */
+            font-weight: 700;  /* ← изменено */
+            letter-spacing: -0.5px;  /* ← изменено */
+            line-height: 1.15;  /* ← изменено */
+            margin-bottom: 18px;  /* ← изменено */
             color: var(--text);
         }
 
         .content .lead {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #8a9ab5;
-            margin-bottom: 24px;
-            font-style: italic;
-            border-left: 3px solid var(--accent);
-            padding-left: 16px;
+            font-family: var(--font-head);  /* ← изменено */
+            font-size: 20px;  /* ← изменено */
+            line-height: 1.6;  /* ← изменено */
+            color: var(--text-soft);  /* ← изменено */
+            margin-bottom: 28px;  /* ← изменено */
         }
 
         .content p {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #8a9ab5;
-            margin-bottom: 16px;
+            font-size: 17px;  /* ← изменено */
+            line-height: 1.75;  /* ← изменено */
+            color: var(--text-soft);  /* ← изменено */
+            margin-bottom: 18px;  /* ← изменено */
         }
 
         .content img {
             width: 100%;
             max-width: 100%;
-            border-radius: 8px;
-            margin: 16px 0 24px;
-            border: 1px solid var(--border);
+            border-radius: 6px;  /* ← изменено */
+            margin: 8px 0 28px;  /* ← изменено */
             display: block;
         }
 
         /* Stats row */
         .stats-row {
             display: flex;
-            gap: 16px;
-            margin: 24px 0;
+            gap: 0;  /* ← изменено */
+            margin: 32px 0;  /* ← изменено */
             flex-wrap: wrap;
+            border-top: 1px solid var(--border);  /* ← изменено */
+            border-bottom: 1px solid var(--border);  /* ← изменено */
         }
 
         .stat-card {
             flex: 1;
-            min-width: 120px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px;
+            min-width: 140px;  /* ← изменено */
+            padding: 20px 20px 20px 0;  /* ← изменено */
+        }
+
+        .stat-card + .stat-card {  /* ← изменено */
+            padding-left: 20px;  /* ← изменено */
+            border-left: 1px solid var(--border);  /* ← изменено */
         }
 
         .stat-card .num {
-            font-family: 'Syne', sans-serif;
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--accent);
+            font-family: var(--font-head);  /* ← изменено */
+            font-size: 32px;  /* ← изменено */
+            font-weight: 700;  /* ← изменено */
+            color: var(--text);  /* ← изменено */
         }
 
         .stat-card .desc {
-            font-size: 12px;
+            font-size: 13px;  /* ← изменено */
+            line-height: 1.4;  /* ← изменено */
             color: var(--muted);
             margin-top: 4px;
         }
@@ -327,15 +317,13 @@
         /* ─── ADD POST FORM ─── */
         #add h2 { margin-bottom: 8px; }
 
-        .form-group { margin-bottom: 16px; }
+        .form-group { margin-bottom: 18px; }  /* ← изменено */
 
         .form-group label {
             display: block;
-            font-size: 11px;
+            font-size: 13px;  /* ← изменено */
             font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--muted);
+            color: var(--text-soft);  /* ← изменено */
             margin-bottom: 6px;
         }
 
@@ -347,8 +335,8 @@
             border: 1px solid var(--border);
             border-radius: 6px;
             color: var(--text);
-            font-family: 'DM Sans', sans-serif;
-            font-size: 14px;
+            font-family: var(--font-body);  /* ← изменено */
+            font-size: 15px;  /* ← изменено */
             outline: none;
             transition: border-color 0.2s;
         }
@@ -358,18 +346,17 @@
             border-color: var(--accent);
         }
 
-        .form-group textarea { height: 120px; resize: vertical; }
+        .form-group textarea { height: 140px; resize: vertical; }  /* ← изменено */
 
         .btn-publish {
-            padding: 12px 28px;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            padding: 12px 26px;  /* ← изменено */
+            background: var(--accent);  /* ← изменено */
             border: none;
             border-radius: 6px;
-            color: white;
-            font-family: 'Syne', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            color: #0b1220;  /* ← изменено */
+            font-family: var(--font-body);  /* ← изменено */
+            font-size: 15px;  /* ← изменено */
+            font-weight: 600;  /* ← изменено */
             cursor: pointer;
             transition: opacity 0.2s;
         }
@@ -380,7 +367,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 13px;
+            font-size: 14px;  /* ← изменено */
             color: var(--muted);
             margin-left: 12px;
         }
@@ -397,20 +384,19 @@
         }
 
         .user-post h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 16px;
+            font-family: var(--font-head);  /* ← изменено */
+            font-size: 19px;  /* ← изменено */
             font-weight: 700;
             margin-bottom: 8px;
             color: var(--text);
         }
 
-        .user-post p { font-size: 14px; color: var(--muted); }
+        .user-post p { font-size: 15px; color: var(--text-soft); }  /* ← изменено */
 
         .user-post-meta {
-            font-size: 11px;
-            color: var(--accent);
+            font-size: 12px;  /* ← изменено */
+            color: var(--muted);  /* ← изменено */
             margin-top: 8px;
-            font-style: italic;
         }
 
         /* ─── MODAL ─── */
@@ -418,7 +404,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.75);
+            background: rgba(0,0,0,0.7);  /* ← изменено */
             z-index: 200;
             backdrop-filter: blur(4px);
             align-items: center;
@@ -432,7 +418,8 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 36px;
-            width: 360px;
+            width: 380px;  /* ← изменено */
+            max-width: calc(100vw - 32px);  /* ← изменено */
             position: relative;
             animation: modalIn 0.25s ease;
         }
@@ -443,14 +430,14 @@
         }
 
         .modal-content h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 22px;
-            font-weight: 800;
+            font-family: var(--font-head);  /* ← изменено */
+            font-size: 26px;  /* ← изменено */
+            font-weight: 700;  /* ← изменено */
             margin-bottom: 6px;
         }
 
         .modal-content .modal-sub {
-            font-size: 13px;
+            font-size: 14px;  /* ← изменено */
             color: var(--muted);
             margin-bottom: 24px;
         }
@@ -480,11 +467,10 @@
             background: var(--accent);
             border: none;
             border-radius: 6px;
-            color: var(--bg);
-            font-family: 'Syne', sans-serif;
+            color: #0b1220;  /* ← изменено */
+            font-family: var(--font-body);  /* ← изменено */
             font-size: 15px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+            font-weight: 600;  /* ← изменено */
             cursor: pointer;
             transition: opacity 0.2s;
             margin-top: 4px;
@@ -494,7 +480,7 @@
 
         #loginMessage {
             margin-top: 12px;
-            font-size: 13px;
+            font-size: 14px;  /* ← изменено */
             text-align: center;
             min-height: 18px;
         }
@@ -503,7 +489,7 @@
         .msg-error { color: var(--danger); }
 
         .demo-hint {
-            font-size: 11px;
+            font-size: 12px;  /* ← изменено */
             color: var(--muted);
             text-align: center;
             margin-top: 12px;
@@ -512,9 +498,14 @@
         /* ─── MOBILE ─── */
         @media (max-width: 768px) {
             .container { flex-direction: column; }
-            aside.sidebar { width: 100%; padding: 12px; border-right: none; border-bottom: 1px solid var(--border); }
-            aside.sidebar nav { flex-direction: row; flex-wrap: wrap; gap: 4px; }
-            aside.sidebar button { width: auto; flex: 1; min-width: 90px; }
+            aside.sidebar { width: 100%; padding: 12px; border-right: none; border-bottom: 1px solid var(--border); position: static; height: auto; }  /* ← изменено */
+            aside.sidebar nav { flex-direction: row; flex-wrap: wrap; gap: 4px; margin-bottom: 0; }  /* ← изменено */
+            aside.sidebar button { width: auto; flex: 1 1 auto; min-width: 90px; white-space: nowrap; }  /* ← изменено */
             .trending-block { display: none; }
-            main { padding: 20px; }
+            main { padding: 24px 20px 48px; }  /* ← изменено */
+            .content h2 { font-size: 30px; }  /* ← изменено */
+            .content p { font-size: 16px; }  /* ← изменено */
+            .stat-card, .stat-card + .stat-card { padding: 16px 0; border-left: none; flex-basis: 100%; }  /* ← изменено */
+            .stat-card + .stat-card { border-top: 1px solid var(--border); }  /* ← изменено */
+            header { padding: 0 16px; }  /* ← изменено */
         }
